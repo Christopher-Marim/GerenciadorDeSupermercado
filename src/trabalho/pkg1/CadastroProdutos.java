@@ -30,12 +30,6 @@ public class CadastroProdutos extends javax.swing.JFrame {
         
     }
     
-//        public void preencheLista2(Produtos px){
-//            this.lista.add(px);
-//        this.cb_produtos.addItem(lista.get(lista.size()).getDescricao());
-//        
-//        }
-    
         //Preencher a combo box com os produtos
         public void preencheLista(){
             for(int i=0; i<this.lista.size();i++){
@@ -43,14 +37,6 @@ public class CadastroProdutos extends javax.swing.JFrame {
                 this.cb_produtos.addItem(this.lista.get(i).getDescricao());
             }
         }
-        
-        public double somarPreços(){
-    
-            double soma =  this.lista.get(0).getPreco() + this.lista.get(1).getPreco();
-    
-            return soma;
-         }
-   
          
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

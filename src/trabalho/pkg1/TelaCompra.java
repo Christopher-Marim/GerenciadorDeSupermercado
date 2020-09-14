@@ -41,10 +41,10 @@ public class TelaCompra extends javax.swing.JFrame {
     public void somarProdutos(){
         
         for (int i = 0; i < listaCarrinho.size(); i++) {
-            for(int j = 0; j < lista.size();j++){
-                 if(listaCarrinho.get(i).getCodigo() == lista.get(j).getCodigo()){
-                 total += listaCarrinho.get(i).getPreco();
-           }
+            
+                 if(JList_produtos.getSelectedValue() == listaCarrinho.get(i).getDescricao()){
+                 total = total + listaCarrinho.get(i).getPreco();
+                 break;
             }
         }
         Jb_total.setText(String.valueOf(total));
@@ -182,7 +182,7 @@ public class TelaCompra extends javax.swing.JFrame {
 
         
     private void JB_addCarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_addCarMouseClicked
-        // imprimir o produto selecionado na combo box.
+       
         
                 dlm2.addElement(JList_produtos.getSelectedValue());
                 JList.setModel(dlm2);

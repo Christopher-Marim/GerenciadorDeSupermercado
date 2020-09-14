@@ -147,7 +147,9 @@ public class Login extends javax.swing.JFrame {
         
         // Logica para fazer autenticação para usuario comum ou admin
         int condicao = 1;
+       
         for(int i = 0;i < contas.size();i++){
+            if(condicao == 1 ){
             for(int j = 0;j < contasComuns.size();j++){
             if((contasComuns.get(j).nome.equals(nome)==true) && (contasComuns.get(j).cpf.equals(cpf)) ){
                  TelaCompra t = new TelaCompra(lista, contasComuns.get(j));
@@ -166,6 +168,9 @@ public class Login extends javax.swing.JFrame {
                 break;
                 }
                 }
+            }
+            else
+                break;
         }
         if(condicao == 1){
             JOptionPane.showMessageDialog(null, "Usuario Invalido");
