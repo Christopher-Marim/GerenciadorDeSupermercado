@@ -123,13 +123,16 @@ public class Edit extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        // TODO add your handling code here:
+        // Editar o produto auxiliar, chamar a função para mudar o o produto na Lista e depois enviar a lista completa com o produto alterado
         
         String desc = Text_desc.getText();
         double price = Double.valueOf(Text_price.getText());
+        
         pEdit.setDescricao(desc);
         pEdit.setPreco(price);
+        
         editProduto();
+        
         CadastroProdutos c = new CadastroProdutos(listaEdit);
         setVisible(false);
         c.setVisible(true);

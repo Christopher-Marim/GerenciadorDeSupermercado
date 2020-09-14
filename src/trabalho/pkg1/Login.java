@@ -146,25 +146,33 @@ public class Login extends javax.swing.JFrame {
         cpf = this.Text_cpf.getText();
         
         // Logica para fazer autenticação para usuario comum ou admin
+        int condicao = 1;
         for(int i = 0;i < contas.size();i++){
-            
-            if((contasComuns.get(i).nome.equals(nome)==true) && (contasComuns.get(i).cpf.equals(cpf)) ){
-                 
+            for(int j = 0;j < contasComuns.size();j++){
+            if((contasComuns.get(j).nome.equals(nome)==true) && (contasComuns.get(j).cpf.equals(cpf)) ){
+                 TelaCompra t = new TelaCompra(lista, contasComuns.get(j));
+                 limparCampos();
+                 t.setVisible(true);
+                 condicao = 0;
                 break;
             }
-            else if((contasAdmin.get(i).nome.equals(nome)==true) && (contasAdmin.get(i).cpf.equals(cpf))){
-                CadastroProdutos cp = new CadastroProdutos(lista);
-                 limparCampos();
-                 cp.setVisible(true);
-                 
-            break;
-            }else{
-                JOptionPane.showMessageDialog(null, "Usuario Invalido");
+            }
+                for(int z = 0;z < contasAdmin.size();z++){
+                 if((contasAdmin.get(z).nome.equals(nome)==true) && (contasAdmin.get(z).cpf.equals(cpf))){
+                    CadastroProdutos cp = new CadastroProdutos(lista);
+                     limparCampos();
+                     cp.setVisible(true);
+                     condicao = 0;
                 break;
+                }
+                }
         }
-            
-        }
+        if(condicao == 1){
+            JOptionPane.showMessageDialog(null, "Usuario Invalido");
+            limparCampos();
         
+        }
+       
         
         
         
