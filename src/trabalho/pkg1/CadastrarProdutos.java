@@ -29,7 +29,7 @@ public class CadastrarProdutos extends javax.swing.JFrame {
         this.Text_preco.setText("");
                 
     }
-
+   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

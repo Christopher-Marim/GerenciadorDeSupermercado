@@ -43,7 +43,15 @@ public class CadastroProdutos extends javax.swing.JFrame {
                 this.cb_produtos.addItem(this.lista.get(i).getDescricao());
             }
         }
+        
+        public double somarPreços(){
+    
+            double soma =  this.lista.get(0).getPreco() + this.lista.get(1).getPreco();
+    
+            return soma;
+         }
    
+         
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -191,6 +199,15 @@ public class CadastroProdutos extends javax.swing.JFrame {
 
     private void jb_editarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_editarMouseClicked
         // Abrir outra tela para alterar
+        for(int i=0; i<lista.size(); i++){
+            if(this.cb_produtos.getSelectedItem().toString() == this.lista.get(i).getDescricao()){
+                Edit e = new Edit(lista.get(i), lista);
+                e.setVisible(true);
+                setVisible(false);
+                
+            }
+        }
+        
     }//GEN-LAST:event_jb_editarMouseClicked
 
     private void bt_imprimir3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_imprimir3MouseClicked
